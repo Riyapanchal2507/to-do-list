@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #786c5e;
+}
+/* .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #786c5e;
+} */
+.todo-list{
+    width: 500px;
+    margin: auto;
+    max-width: 540px;
+    background-color: white;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.to-do{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f7a8a896;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+.to-do:hover{
+    box-shadow: 1px 1px 1px 1px rgb(197, 137, 137);
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #ff5945;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+button:hover{
+    background-color: #ff5845ac;
+    color: white;
+    transition: 0.5s;
+}
+ul li{
+    list-style: none;
+    font-size: 20px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-image: url(img/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(img/checked.png);
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 33px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+}
+ul li span:hover{
+    background-color: #ff5945;
+    transition: 0.5s;
+}
+
+/* #list-container li {
+    overflow-y: scroll;
+    height: 25vh;
+} */
+
+@media screen and (max-width:768px) {
+    .todo-list{
+        width: 400px;
+    }
+    .to-do{
+       width: 335px;
+    }
+    input{
+        padding: 0px;
+    }
+    button{
+        padding: 8px 25px;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:425px) {
+    .todo-list{
+        width: 360px;
+    }
+    .to-do{
+       width: 325px;
+    }
+    input{
+        padding: 0px;
+    }
+    button{   
+        padding: 5px 20px;
+        font-size: 17px;
+    }
+}
